@@ -1,4 +1,4 @@
-![image](./diba-php-logo.png)
+![image](./diba-php.png)
 
 # DIBA PHP
 
