@@ -1,0 +1,9 @@
+{{plugin}}Intent:
+  intent: "{{plugin}} Plugin Intent"
+  description: "Plugins/{{plugin}} Intent Description"
+  match:
+    method: GET
+    path: /plugins/{{slug}}
+  executors:
+    - Plugins\{{plugin}}\Executors\{{plugin}}Executor@handle
+  response: Diba\Responses\Json

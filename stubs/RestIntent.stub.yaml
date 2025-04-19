@@ -1,0 +1,44 @@
+DummyIndex:
+  intent: "Dummy一覧取得"
+  match:
+    method: GET
+    path: /dummys
+  executors:
+    - DummyApiExecutor@index
+  response: Diba\Responses\Json
+
+DummyShow:
+  intent: "Dummy詳細取得"
+  match:
+    method: GET
+    path: /dummys/{id}
+  executors:
+    - DummyApiExecutor@show
+  response: Diba\Responses\Json
+
+DummyStore:
+  intent: "Dummy作成"
+  match:
+    method: POST
+    path: /dummys
+  executors:
+    - DummyApiExecutor@store
+  response: Diba\Responses\Json
+
+DummyUpdate:
+  intent: "Dummy更新"
+  match:
+    method: PUT
+    path: /dummys/{id}
+  executors:
+    - DummyApiExecutor@update
+  response: Diba\Responses\Json
+
+DummyDestroy:
+  intent: "Dummy削除"
+  match:
+    method: DELETE
+    path: /dummys/{id}
+  executors:
+    - DummyApiExecutor@destroy
+  response: Diba\Responses\Json

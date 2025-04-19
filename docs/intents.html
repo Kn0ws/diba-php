@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>DIBA Intent Documentation</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 2em; max-width: 1000px; margin: auto; }
+        code, pre { background: #f5f5f5; padding: 0.5em; display: block; white-space: pre-wrap; }
+        h1, h2, h3 { border-bottom: 1px solid #ccc; padding-bottom: 0.2em; }
+    </style>
+</head>
+<body>
+    <h1>Intent Documentation</h1>
+<h2>Welcome</h2>
+<p><strong>Description</strong>: DIBA PHPの起動確認用Intent。JSONでメッセージを返す。</p>
+<ul>
+<li><strong>Tags</strong>: core, example, json</li>
+<li><strong>Method</strong>: <code>GET</code></li>
+<li><strong>Path</strong>: <code>/welcome</code></li>
+<li><strong>Executors</strong>: <code>WelcomeExecutor@sayWelcome</code></li>
+<li><strong>Response</strong>: <code>Diba\Responses\Json</code></li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-yaml">input:
+  name: Taro
+expected:
+  message: 'Welcome to DIBA PHP!'
+  time: '2025-04-19 23:13:30'
+</code></pre>
+<h2>WelcomeHtml</h2>
+<p><strong>Description</strong>: DIBA PHPの起動確認用Intent。HTMLでメッセージを返す。</p>
+<ul>
+<li><strong>Tags</strong>: core, example, html</li>
+<li><strong>Method</strong>: <code>GET</code></li>
+<li><strong>Path</strong>: <code>/welcome/html</code></li>
+<li><strong>Executors</strong>: <code>WelcomeExecutor@sayWelcomeHtml</code></li>
+<li><strong>Response</strong>: <code>Diba\Responses\Html</code></li>
+</ul>
+<h2>WelcomeRedirect</h2>
+<p><strong>Description</strong>: DIBA PHPの起動確認用Intent。リダイレクトを返す。</p>
+<ul>
+<li><strong>Tags</strong>: core, example, redirect</li>
+<li><strong>Method</strong>: <code>GET</code></li>
+<li><strong>Path</strong>: <code>/welcome/redirect</code></li>
+<li><strong>Executors</strong>: <code>WelcomeExecutor@redirect</code></li>
+<li><strong>Response</strong>: <code>Diba\Responses\Redirect</code></li>
+</ul>
+<h2>WelcomeRequire</h2>
+<p><strong>Description</strong>: name パラメータが必須の Welcome Intent。</p>
+<ul>
+<li><strong>Tags</strong>: core, example, require</li>
+<li><strong>Method</strong>: <code>GET</code></li>
+<li><strong>Path</strong>: <code>/welcome/require</code></li>
+<li><strong>Executors</strong>: <code>WelcomeExecutor@sayWelcomeRequire</code></li>
+<li><strong>Response</strong>: <code>Diba\Responses\Json</code></li>
+</ul>
+<h2>WelcomeView</h2>
+<p><strong>Description</strong>: DIBA PHPの起動確認用Intent。Viewでメッセージを返す。</p>
+<ul>
+<li><strong>Tags</strong>: core, example, view</li>
+<li><strong>Method</strong>: <code>GET</code></li>
+<li><strong>Path</strong>: <code>/welcome/view</code></li>
+<li><strong>Executors</strong>: <code>WelcomeExecutor@sayWelcomeView</code></li>
+<li><strong>Response</strong>: <code>Diba\Responses\ViewResponse</code></li>
+</ul>
+<h2>WelcomeSmart</h2>
+<p><strong>Description</strong>: Acceptに応じたレスポンスを返す。</p>
+<ul>
+<li><strong>Tags</strong>: core, example, accept</li>
+<li><strong>Method</strong>: <code>GET</code></li>
+<li><strong>Path</strong>: <code>/welcome/smart</code></li>
+<li><strong>Executors</strong>: <code>WelcomeExecutor@sayWelcomeSmart</code></li>
+<li><strong>Response</strong>: ``</li>
+</ul>
+<h2>WelcomeWithEvent</h2>
+<p><strong>Description</strong>: DIBA PHPの起動確認用Intent。JSONでメッセージを返す。</p>
+<ul>
+<li><strong>Tags</strong>: core, example, event</li>
+<li><strong>Method</strong>: <code>GET</code></li>
+<li><strong>Path</strong>: <code>/welcome/event</code></li>
+<li><strong>Executors</strong>: <code>WelcomeExecutor@sayWelcomeEvent</code></li>
+<li><strong>Response</strong>: <code>Diba\Responses\Json</code></li>
+</ul>
+<h2>WelcomeEventEffect</h2>
+<p><strong>Description</strong>: DIBA PHPの起動確認用Intent。JSONでメッセージを返す。</p>
+<ul>
+<li><strong>Tags</strong>: core, example, event</li>
+<li><strong>Method</strong>: <code>GET</code></li>
+<li><strong>Path</strong>: <code>-</code></li>
+<li><strong>Executors</strong>: <code>WelcomeExecutor@sayWelcomeEventEmit</code></li>
+<li><strong>Response</strong>: <code>Diba\Responses\Json</code></li>
+</ul>
+<h2>WelcomeWithId</h2>
+<p><strong>Description</strong>: DIBA PHPのパスパラメータIntent。JSONでメッセージを返す。</p>
+<ul>
+<li><strong>Tags</strong>:</li>
+<li><strong>Method</strong>: <code>GET</code></li>
+<li><strong>Path</strong>: <code>/welcomeWithId/{id}</code></li>
+<li><strong>Executors</strong>: <code>WelcomeExecutor@sayWelcomeWithId</code></li>
+<li><strong>Response</strong>: <code>Diba\Responses\Json</code></li>
+</ul>
+<h2>WelcomeWithIntId</h2>
+<p><strong>Description</strong>: DIBA PHPのパスパラメータIntent。INT制限をかけ、JSONでメッセージを返す。</p>
+<ul>
+<li><strong>Tags</strong>:</li>
+<li><strong>Method</strong>: <code>GET</code></li>
+<li><strong>Path</strong>: <code>/welcomeWithIntId/{id}</code></li>
+<li><strong>Executors</strong>: <code>WelcomeExecutor@sayWelcomeWithId</code></li>
+<li><strong>Response</strong>: <code>Diba\Responses\Json</code></li>
+</ul>
+<h2>WelcomeFilter</h2>
+<p><strong>Description</strong>: -</p>
+<ul>
+<li><strong>Tags</strong>:</li>
+<li><strong>Method</strong>: <code>GET</code></li>
+<li><strong>Path</strong>: <code>/welcomeFilter</code></li>
+<li><strong>Executors</strong>: <code>WelcomeExecutor@sayWelcomeWithFilter</code></li>
+<li><strong>Response</strong>: <code>Diba\Responses\Json</code></li>
+<li><strong>Middlewares:</strong>
+<ul>
+<li>Before: RequireAuth, CheckPermission</li>
+<li>After:  LogAccess</li>
+</ul>
+</li>
+</ul>
+<h2>SampleIntent</h2>
+<p><strong>Description</strong>: Plugins/Sample Intent Description</p>
+<ul>
+<li><strong>Tags</strong>:</li>
+<li><strong>Method</strong>: <code>GET</code></li>
+<li><strong>Path</strong>: <code>/plugins/sample</code></li>
+<li><strong>Executors</strong>: <code>Plugins\Sample\Executors\SampleExecutor@handle</code></li>
+<li><strong>Response</strong>: <code>Responses\Json</code></li>
+<li><strong>Plugin</strong>: Sample</li>
+</ul>
+
+</body>
+</html>

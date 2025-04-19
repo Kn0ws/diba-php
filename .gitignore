@@ -1,0 +1,10 @@
+vendor/
+!logs/.gitkeep
+.env
+.env.testing
+*.log
+.idea/
+*.swp
+.vscode/
+.DS_Store
+composer.lock

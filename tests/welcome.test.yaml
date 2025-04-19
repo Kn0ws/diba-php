@@ -1,0 +1,6 @@
+intent: Welcome
+input:
+  name: Taro
+expected:
+  message: 'Welcome to DIBA PHP!'
+  time: '2025-04-19 23:13:30'

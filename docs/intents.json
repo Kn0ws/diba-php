@@ -1,0 +1,198 @@
+[
+    {
+        "name": "Welcome",
+        "plugin": null,
+        "description": "DIBA PHPの起動確認用Intent。JSONでメッセージを返す。",
+        "tags": [
+            "core",
+            "example",
+            "json"
+        ],
+        "method": "GET",
+        "path": "\/welcome",
+        "executors": [
+            "WelcomeExecutor@sayWelcome"
+        ],
+        "response": "Diba\\Responses\\Json",
+        "middlewares": []
+    },
+    {
+        "name": "WelcomeHtml",
+        "plugin": null,
+        "description": "DIBA PHPの起動確認用Intent。HTMLでメッセージを返す。",
+        "tags": [
+            "core",
+            "example",
+            "html"
+        ],
+        "method": "GET",
+        "path": "\/welcome\/html",
+        "executors": [
+            "WelcomeExecutor@sayWelcomeHtml"
+        ],
+        "response": "Diba\\Responses\\Html",
+        "middlewares": []
+    },
+    {
+        "name": "WelcomeRedirect",
+        "plugin": null,
+        "description": "DIBA PHPの起動確認用Intent。リダイレクトを返す。",
+        "tags": [
+            "core",
+            "example",
+            "redirect"
+        ],
+        "method": "GET",
+        "path": "\/welcome\/redirect",
+        "executors": [
+            "WelcomeExecutor@redirect"
+        ],
+        "response": "Diba\\Responses\\Redirect",
+        "middlewares": []
+    },
+    {
+        "name": "WelcomeRequire",
+        "plugin": null,
+        "description": "name パラメータが必須の Welcome Intent。",
+        "tags": [
+            "core",
+            "example",
+            "require"
+        ],
+        "method": "GET",
+        "path": "\/welcome\/require",
+        "executors": [
+            "WelcomeExecutor@sayWelcomeRequire"
+        ],
+        "response": "Diba\\Responses\\Json",
+        "middlewares": []
+    },
+    {
+        "name": "WelcomeView",
+        "plugin": null,
+        "description": "DIBA PHPの起動確認用Intent。Viewでメッセージを返す。",
+        "tags": [
+            "core",
+            "example",
+            "view"
+        ],
+        "method": "GET",
+        "path": "\/welcome\/view",
+        "executors": [
+            "WelcomeExecutor@sayWelcomeView"
+        ],
+        "response": "Diba\\Responses\\ViewResponse",
+        "middlewares": []
+    },
+    {
+        "name": "WelcomeSmart",
+        "plugin": null,
+        "description": "Acceptに応じたレスポンスを返す。",
+        "tags": [
+            "core",
+            "example",
+            "accept"
+        ],
+        "method": "GET",
+        "path": "\/welcome\/smart",
+        "executors": [
+            "WelcomeExecutor@sayWelcomeSmart"
+        ],
+        "response": null,
+        "middlewares": []
+    },
+    {
+        "name": "WelcomeWithEvent",
+        "plugin": null,
+        "description": "DIBA PHPの起動確認用Intent。JSONでメッセージを返す。",
+        "tags": [
+            "core",
+            "example",
+            "event"
+        ],
+        "method": "GET",
+        "path": "\/welcome\/event",
+        "executors": [
+            "WelcomeExecutor@sayWelcomeEvent"
+        ],
+        "response": "Diba\\Responses\\Json",
+        "middlewares": []
+    },
+    {
+        "name": "WelcomeEventEffect",
+        "plugin": null,
+        "description": "DIBA PHPの起動確認用Intent。JSONでメッセージを返す。",
+        "tags": [
+            "core",
+            "example",
+            "event"
+        ],
+        "method": "GET",
+        "path": "-",
+        "executors": [
+            "WelcomeExecutor@sayWelcomeEventEmit"
+        ],
+        "response": "Diba\\Responses\\Json",
+        "middlewares": []
+    },
+    {
+        "name": "WelcomeWithId",
+        "plugin": null,
+        "description": "DIBA PHPのパスパラメータIntent。JSONでメッセージを返す。",
+        "tags": [],
+        "method": "GET",
+        "path": "\/welcomeWithId\/{id}",
+        "executors": [
+            "WelcomeExecutor@sayWelcomeWithId"
+        ],
+        "response": "Diba\\Responses\\Json",
+        "middlewares": []
+    },
+    {
+        "name": "WelcomeWithIntId",
+        "plugin": null,
+        "description": "DIBA PHPのパスパラメータIntent。INT制限をかけ、JSONでメッセージを返す。",
+        "tags": [],
+        "method": "GET",
+        "path": "\/welcomeWithIntId\/{id}",
+        "executors": [
+            "WelcomeExecutor@sayWelcomeWithId"
+        ],
+        "response": "Diba\\Responses\\Json",
+        "middlewares": []
+    },
+    {
+        "name": "WelcomeFilter",
+        "plugin": null,
+        "description": "",
+        "tags": [],
+        "method": "GET",
+        "path": "\/welcomeFilter",
+        "executors": [
+            "WelcomeExecutor@sayWelcomeWithFilter"
+        ],
+        "response": "Diba\\Responses\\Json",
+        "middlewares": {
+            "before": [
+                "RequireAuth",
+                "CheckPermission"
+            ],
+            "after": [
+                "LogAccess"
+            ]
+        }
+    },
+    {
+        "name": "SampleIntent",
+        "plugin": "Sample",
+        "description": "Plugins\/Sample Intent Description",
+        "tags": [],
+        "method": "GET",
+        "path": "\/plugins\/sample",
+        "executors": [
+            "Plugins\\Sample\\Executors\\SampleExecutor@handle"
+        ],
+        "response": "Responses\\Json",
+        "middlewares": []
+    }
+]

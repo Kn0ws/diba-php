@@ -1,0 +1,9 @@
+SampleIntent:
+  intent: "Sample Plugin Intent"
+  description: "Plugins/Sample Intent Description"
+  match:
+    method: GET
+    path: /plugins/sample
+  executors:
+    - Plugins\Sample\Executors\SampleExecutor@handle
+  response: Responses\Json

@@ -1,0 +1,9 @@
+DummyJob:
+  intent: "DummyJob を処理"
+  description: "イベントに反応する非同期ジョブ"
+  tags: [job, event]
+  on_effects:
+    user.created: handle
+  executors:
+    - DummyJobExecutor@handle
+  response: Diba\Responses\Json

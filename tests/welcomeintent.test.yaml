@@ -1,0 +1,5 @@
+intent: WelcomeIntent
+input:
+  name: Taro
+expected:
+  error: 'Intent not found'

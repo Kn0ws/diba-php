@@ -1,0 +1,37 @@
+{
+    "name": "kn0ws/diba-php",
+    "description": "Declarative Intent-Based Architecture PHP framework",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Kawaguchi Chihiro (Kn0ws)",
+        "email": "diba@kn0ws.com"
+      }
+    ],
+    "autoload": {
+      "psr-4": {
+        "Diba\\": "diba/",
+        "Executors\\": "app/Executors/",
+        "Services\\": "app/Services/",
+        "Constraints\\": "app/Constraints/",
+        "Responses\\": "app/Responses/",
+        "Models\\": "app/Models/",
+        "Database\\": "database/",
+        "Plugins\\": "plugins/",
+        "Cli\\Commands\\": "cli/Commands/"
+      }
+    },
+    "require": {
+      "php": "^8.0",
+      "symfony/yaml": "^6.0",
+      "illuminate/database": "^10.0",
+        "league/commonmark": "^2.6"
+    },
+    "scripts": {
+      "start": "php -S localhost:8080 -t public",
+      "migrate": "php cli/migrate.php"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
