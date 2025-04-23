@@ -67,6 +67,9 @@ class GenerateDocsCommand implements CommandInterface
             $pluginSource = $intent->plugin ?? null;
 
             $output .= "## {$name}\n";
+            if ($pluginSource) {
+                $output .= "- **Plugin**: {$pluginSource}\n";
+            }
             $output .= "**Description**: {$desc}\n\n";
             $output .= "- **Tags**: {$tags}\n";
             $output .= "- **Method**: `{$method}`\n";
@@ -78,9 +81,7 @@ class GenerateDocsCommand implements CommandInterface
                 if ($before) $output .= "  - Before: {$before}\n";
                 if ($after)  $output .= "  - After:  {$after}\n";
             }
-            if ($pluginSource) {
-                $output .= "- **Plugin**: {$pluginSource}\n";
-            }
+            
 
             $testPath = __DIR__ . "/../../tests/{$slug}.test.yaml";
             if (file_exists($testPath)) {
