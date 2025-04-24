@@ -63,8 +63,21 @@ class Intent
         }
     
         if ($class === \Diba\Responses\Json::class) {
-            return new $class($state->all(), ...$args);
+            $args = array_values($args);
+
+            $data = $state->all();
+            $status = 200;
+
+            if (isset($args[0]) && is_int($args[0])) {
+                $status = $args[0];
+            } elseif (isset($args[0]) && is_array($args[0]) && isset($args[1]) && is_int($args[1])) {
+                $data = $args[0];
+                $status = $args[1];
+            }
+            
+            return new $class($data, $status);
         }
+        
     
         return new $class(...$args);
     }

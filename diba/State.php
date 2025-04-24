@@ -136,6 +136,11 @@ class State
         return $this->data;
     }
 
+    public function intentName(): ?string
+    {
+        return $this->get('intent');
+    }
+
 
 
 

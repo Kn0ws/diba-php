@@ -21,7 +21,7 @@ class ExecutorDispatcher
             }
 
             [$class, $method] = explode('@', $execDef);
-            $fqcn = str_contains($class, '\\') ? ltrim($class, '\\') : '\\Executors\\' . $class;
+            $fqcn = str_contains($class, '\\') ? ltrim($class, '\\') : '\\App\\Executors\\' . $class;
 
             if (!class_exists($fqcn)) {
                 throw new \Exception("Executor class not found: {$fqcn}");

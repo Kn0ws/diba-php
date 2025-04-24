@@ -12,11 +12,7 @@
     "autoload": {
       "psr-4": {
         "Diba\\": "diba/",
-        "Executors\\": "app/Executors/",
-        "Services\\": "app/Services/",
-        "Constraints\\": "app/Constraints/",
-        "Responses\\": "app/Responses/",
-        "Models\\": "app/Models/",
+        "App\\": "app/",
         "Database\\": "database/",
         "Plugins\\": "plugins/",
         "Cli\\Commands\\": "cli/Commands/"
@@ -25,8 +21,7 @@
     "require": {
       "php": "^8.0",
       "symfony/yaml": "^6.0",
-      "illuminate/database": "^10.0",
-        "league/commonmark": "^2.6"
+      "league/commonmark": "^2.6"
     },
     "scripts": {
       "start": "php -S localhost:8080 -t public",

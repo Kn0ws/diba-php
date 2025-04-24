@@ -1,6 +1,6 @@
 <?php
 
-namespace Executors;
+namespace App\Executors;
 
 use Diba\Request;
 use Diba\State;

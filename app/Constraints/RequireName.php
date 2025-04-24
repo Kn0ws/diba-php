@@ -1,6 +1,6 @@
 <?php
 
-namespace Constraints;
+namespace App\Constraints;
 
 use Diba\Request;
 use Diba\State;

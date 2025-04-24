@@ -5,15 +5,21 @@ use Diba\Response;
 
 class View extends Response
 {
-    public function __construct(string $viewFile, array $data = [])
+    public function __construct(string $template, array $data = [])
     {
-        extract($data);
         ob_start();
-        include $viewFile;
-        $content = ob_get_clean();
+        extract($data);
 
-        parent::__construct(200, $content);
-        $this->setHeader('Content-Type', 'text/html; charset=utf-8');
+        $templatePath = realpath(__DIR__ . '/../../app/Views/' . $template);
 
+        if (!$templatePath || !file_exists($templatePath)) {
+            throw new \Exception("View file not found: $template");
+        }
+
+        include $templatePath;
+        $body = ob_get_clean();
+
+        parent::__construct(200, $body);
+        $this->setHeader('Content-Type', 'text/html');
     }
 }

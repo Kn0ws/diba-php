@@ -23,11 +23,22 @@ class IntentResolver
                 if (!is_array($intents)) {
                     continue;
                 }
+
+                $globalMiddlewares = file_exists(__DIR__ . '/../config/middlewares.php')
+                    ? require __DIR__ . '/../config/middlewares.php'
+                    : ['before' => [], 'after' => []];
         
                 foreach ($intents as $name => $config) {
+                    $config['middlewares']['before'] = array_merge(
+                        $globalMiddlewares['before'],
+                        $config['middlewares']['before'] ?? []
+                    );
+                    $config['middlewares']['after'] = array_merge(
+                        $globalMiddlewares['after'],
+                        $config['middlewares']['after'] ?? []
+                    );
+
                     $intent = new Intent($name, $config);
-                
-                    // プラグイン名を推定
                     $pluginName = $this->detectPluginName($file);
                     if ($pluginName) {
                         $intent->plugin = $pluginName;

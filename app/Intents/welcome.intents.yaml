@@ -59,7 +59,7 @@ WelcomeView:
     path: /welcome/view
   executors:
     - WelcomeExecutor@sayWelcomeView
-  response: Diba\Responses\ViewResponse
+  response: Diba\Responses\View
   response_args:
     - "welcome.php"
 

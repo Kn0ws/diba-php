@@ -19,6 +19,8 @@ class Kernel
         $state = $state ?? new State();
         $state->setDefaultContext($request);
 
+        $state->set('intent', $intent->name);
+
 
         $constraints = $intent->config['constraints'] ?? [];
         $checker = new ConstraintChecker();
